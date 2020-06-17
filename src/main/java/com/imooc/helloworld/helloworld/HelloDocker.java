@@ -12,6 +12,6 @@ public class HelloDocker {
     @RequestMapping("/hello")
     @ResponseBody
     public String hello() {
-        return "helloDocker";
+        return "helloDocker77";
     }
 }
