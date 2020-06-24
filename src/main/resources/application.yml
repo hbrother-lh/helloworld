@@ -4,15 +4,31 @@ server:
 spring:
   application:
     name: client
+  #thymelea模板配置
+  thymeleaf:
+    cache: false
+    mode: LEGACYHTML5
+    encoding: UTF-8
+    servlet:
+      content-type: text/html
+    prefix: classpath:/templates/
+    suffix: .html
+    resources:
+      chain:
+        strategy:
+          content:
+            enabled: true
+            paths: /**
 eureka:
   client:
     fetch-registry: true
     register-with-eureka: true
     service-url:
-      defaultZone: http://121.37.30.244:8761/eureka/
+      defaultZone: http://localhost:8761/eureka/
   instance:
-    instance-id: http://121.37.30.244:8760
+    instance-id: http://localhost:8760
     prefer-ip-address: true
 ribbon:
   eureka:
     enable: true
+
