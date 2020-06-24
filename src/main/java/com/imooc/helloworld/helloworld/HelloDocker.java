@@ -12,6 +12,6 @@ public class HelloDocker {
     @RequestMapping("/hello/{name}")
     @ResponseBody
     public String hello(@PathVariable("name")String name) {
-        return "helloDockerNgrokWhy"+name;
+        return "hello:"+name;
     }
 }
