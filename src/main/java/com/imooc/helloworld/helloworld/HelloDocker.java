@@ -1,17 +1,26 @@
 package com.imooc.helloworld.helloworld;
 
 
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.*;
 
-@RestController
+@Controller
 public class HelloDocker {
 
     @RequestMapping("/hello/{name}")
     @ResponseBody
     public String hello(@PathVariable("name")String name) {
+
         return "hello:"+name;
+    }
+
+    @RequestMapping("/login")
+    public String login() {
+        return "login";
+    }
+
+    @RequestMapping("/index")
+    public String index() {
+        return "index";
     }
 }
