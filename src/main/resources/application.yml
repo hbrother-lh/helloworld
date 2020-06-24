@@ -1,0 +1,18 @@
+server:
+  port: 8760
+
+spring:
+  application:
+    name: client
+eureka:
+  client:
+    fetch-registry: true
+    register-with-eureka: true
+    service-url:
+      defaultZone: http://121.37.30.244:8761/eureka/
+  instance:
+    instance-id: http://121.37.30.244:8760
+    prefer-ip-address: true
+ribbon:
+  eureka:
+    enable: true
