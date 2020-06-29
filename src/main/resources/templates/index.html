@@ -6,10 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+<script src="jquery-3.5.1.min.js"></script>
+<script>
+    $(document).ready(function(){
+      $("#uploadButton").click(function(){
+            $("#uploadButton").parents("form").attr("action","/uploadFile");
+            $("#uploadButton").parents("form").attr("enctype","/multipart/form-data");
+            $("#buttonForm").submit();
+      });
+
+      $("#copyButton").click(function(){
+            $("#copyButton").parents("form").attr("action","/copyFile");
+            $("#copyButton").parents("form").attr("enctype","/text/plain");
+            $("#buttonForm").submit();
+      });
+    });
+</script>
 <body>
-    <form>
+    <form action="" enctype="" method="post" id="buttonForm">
         <table>
-            yes,you win!
+            <tr>
+                <td>
+                    <input type="file" name="file">
+                    <input type="button" value="上传文件" id="uploadButton"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="input" placeholder="请输入复制文件路径" name="targetPath"/>
+                    <input type="button" value="多线程复制" id="copyButton"/>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="button" value="下载文件" id="downloadButton"/>
+                </td>
+            </tr>
         </table>
 
     </form>
