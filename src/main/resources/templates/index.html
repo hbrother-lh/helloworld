@@ -11,11 +11,13 @@
     $(document).ready(function(){
       $("#uploadButton").click(function(){
             $("#uploadButton").parents("form").attr("action","/uploadFile");
-            $("#uploadButton").parents("form").attr("enctype","/multipart/form-data");
+            $("#uploadButton").parents("form").attr("enctype","multipart/form-data");
+            alert($("#buttonForm").attr("enctype")+"111");
             $("#buttonForm").submit();
       });
 
       $("#copyButton").click(function(){
+            alert("sdad");
             $("#copyButton").parents("form").attr("action","/copyFile");
             $("#copyButton").parents("form").attr("enctype","/text/plain");
             $("#buttonForm").submit();
